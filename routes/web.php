@@ -31,6 +31,12 @@ Route::middleware([
 
     Route::get('/stripe/{totalprice}', [StripeController::class, 'stripe'])->name('stripe');
     Route::post('/stripe/{totalprice}', [StripeController::class, 'stripePost'])->name('stripe.post');
+
+    Route::get('/show_order', [HomeController::class, 'show_order'])->name('show_order');
+        Route::get('/cancel_order/{id}', [HomeController::class, 'cancel_order'])->name('cancel_order');
+
+
+
 });
 
 // Admin Panel Routes
