@@ -102,7 +102,16 @@
               <span class="menu-title">Orders</span>
             </a>
           </li>
-         
+
+          {{-- <li class="nav-item menu-items">
+    <a class="nav-link" href="{{ route('admin.comments') }}">
+        <span class="menu-icon">
+            <i class="mdi mdi-playlist-play"></i>
+        </span>
+        <span class="menu-title">Comments</span>
+    </a>
+</li>
+          --}}
       
         </ul>
       </nav>

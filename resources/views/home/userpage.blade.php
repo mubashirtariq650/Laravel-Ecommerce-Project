@@ -49,6 +49,16 @@
         @include('home.client')
       <!-- end client section -->
       <!-- footer start -->
+      <!-- ✅ Comment Section Include -->
+
+
+
+@include('home.comment');
+
+
+
+
+      
        @include('home.footer')
       <!-- footer end -->
       <div class="cpy_">

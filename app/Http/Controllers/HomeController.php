@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use App\Models\Comment;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\User;
@@ -15,9 +16,12 @@ class HomeController extends Controller
 
       public function index(){
         $product = Product::paginate(9);
-        return view('home.userpage' , compact('product'));
+         $comments = Comment::with(['user', 'replies.user'])
+        ->whereNull('parent_id')
+        ->latest()
+        ->get();
+        return view('home.userpage' , compact('product','comments'));
     }
-
 
     public function redirect(){
             
@@ -52,7 +56,11 @@ class HomeController extends Controller
 
         else{
              $product = Product::paginate(9);
-        return view('home.userpage' , compact('product'));
+              $comments = Comment::with(['user', 'replies.user'])
+            ->whereNull('parent_id')
+            ->latest()
+            ->get();
+        return view('home.userpage' , compact('product','comments'));
         }
     }
 
