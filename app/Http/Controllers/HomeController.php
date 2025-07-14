@@ -18,8 +18,8 @@ class HomeController extends Controller
         $product = Product::paginate(9);
          $comments = Comment::with(['user', 'replies.user'])
         ->whereNull('parent_id')
-        ->latest()
-        ->get();
+        ->take(2) // ya ->limit(5)
+    ->get();
         return view('home.userpage' , compact('product','comments'));
     }
 

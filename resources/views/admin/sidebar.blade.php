@@ -103,15 +103,15 @@
             </a>
           </li>
 
-          {{-- <li class="nav-item menu-items">
-    <a class="nav-link" href="{{ route('admin.comments') }}">
+          <li class="nav-item menu-items">
+    <a class="nav-link" href="{{ route('comments_view') }}">
         <span class="menu-icon">
             <i class="mdi mdi-playlist-play"></i>
         </span>
         <span class="menu-title">Comments</span>
     </a>
 </li>
-          --}}
+         
       
         </ul>
       </nav>

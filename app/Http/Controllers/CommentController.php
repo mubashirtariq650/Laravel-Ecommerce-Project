@@ -25,5 +25,18 @@ class CommentController extends Controller
         return back();
     }
 
+    
+    
+public function adminIndex()
+{
+    $comments = Comment::with(['user', 'replies.user'])->latest()->get();
+
+    return view('admin.comment_index', compact('comments'));
+}
+
+
+
+
+
   
 }

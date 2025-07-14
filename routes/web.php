@@ -65,9 +65,13 @@ Route::middleware([
     Route::get('/send_email/{id}', [AdminController::class, 'send_email'])->name('send_email');
     Route:: post('/send_user_email/{id}', [AdminController::class, 'send_user_email'])->name('send_user_email');
         Route::get('/search', [AdminController::class, 'search'])->name('search');
-
-
-
+        Route::get('/comments_view', [CommentController::class, 'adminIndex']) // optional: admin middleware if needed
+    ->name('comments_view');
+    
+    Route::get('/comments', function () {
+    return redirect()->route('comments_view');  
+});
+//  ye error aarha tha iss leye lgya
 
 
 });
